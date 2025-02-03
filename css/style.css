@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+html,
+body {position: relative; height: 100%;}
+body {margin: 0; padding: 0; width: 100vw;}
+
+
+.header_wrapper {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 130px;
+    background: #fff;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+.header_hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+
+
+
+
+.header_wrapper {height: 130px; background: #fff;}
+.header_wrapper h1 {height: 75px; display: flex; align-items: center; justify-content: center; border-bottom: 1px #dcdcdc solid;}
+.header_wrapper h1 img {height: 35px;}
+.header_wrapper .gnb {height: 55px; width: 1200px; margin: 0 auto;}
+
+.gnb {display: flex; align-items: center; justify-content: space-between;}
+.gnb .gnb_wrapper ul {display: flex;}
+.gnb .gnb_wrapper ul li a { display: block; width: 150px; font-size: 18px; text-align: center; padding: 18px 0;}
+
+.gnb .gnb_menu ul {display: flex;}
+.gnb .gnb_menu ul li a {display: block; width: 40px; height: 100%; text-align: center; padding: 10px 0;}
+
+.cursor {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    background-color: white; 
+    border-radius: 50%;
+    pointer-events: none; 
+    mix-blend-mode: difference; /* 반전 효과 */
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.2s ease-out, width 0.2s ease, height 0.2s ease;
+}
+/* banner 영역에서는 커서를 숨김 */
+header:hover ~ .cursor,
+.banner:hover ~ .cursor {
+    opacity: 0;
+}
+
+/* video 영역부터 커서 보이도록 설정 */
+.video:hover ~ .cursor {
+    opacity: 1;
+}
+
+/******* main *******/
+.main {background: #000; color: #fff; margin-top: 130px;}
+/******* banner *******/
+.banner {position: relative;}
+.banner_inner canvas { display: block; width: 100%; height: 100%; object-fit: cover;}
+
+.more_banner {position: absolute; right: 50px; bottom: 50px;}
+.more_banner .more_btn {width: 200px; height: 200px; position: relative; display: flex; align-items: center; justify-content: center;}
+.more_banner .more_arrow {width: 100px; height: 100px; border-radius: 50%; transition: all 0.3s linear;
+    position: relative; z-index: 2; display: flex; align-items: center; justify-content: center;}
+.more_banner .more_arrow::before { content: ''; display: block; width: 100%; height: 100%; border-radius: 50%; background: #000; opacity: 0;
+transition: all 0.3s linear; position: absolute; left: 0; top: 0; transform: scale(0);}
+.more_banner .more_arrow svg { width: 50px; height: 30px; transition: all 0.3s linear; fill: #fff; position: relative;}
+.more_banner .more_text {position: absolute; left: 0; top: 0; width: 100%; height: 100%; transition: all 0.3s linear; z-index: 2; animation: moreRotate 6s linear infinite; fill: #c09686;}
+.more_banner .more_btn:hover .more_arrow svg {fill: #000;}
+.more_banner .more_btn:hover .more_text {fill: #000;}
+@keyframes moreRotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+/******* video *******/
+.video {margin: 0 auto; padding-top: 120px; text-align: center;}
+.video h2 {font-size: 48px; font-family: 'Bookman Old Style'; margin-bottom: 60px;}
+.video_container { position: relative; width: 100%; max-width: 1920px; margin: 0 auto; overflow: hidden;}
+.video_wrapper { position: relative; width: 100%;}
+
+.video_wrapper video { 
+    width: 100%;
+    height: auto;
+    display: block;
+    clip-path: inset(30% 0 30% 0);
+    transition: clip-path 1.5s ease-in-out; 
+}
+
+.video_container.hovered .video_wrapper video {
+    clip-path: inset(0 0 0 0); 
+}
+
+.video_container.reset .video_wrapper video {
+    clip-path: inset(30% 0 30% 0); 
+    transition: clip-path 1.5s ease-in-out;
+}
+
+
+
+
+/******* makeup *******/
+.makeup {width: 1200px; height: 1348px; margin:0 auto; padding-top: 120px; text-align: center; position: relative;}
+.makeup h2 {font-size: 48px; font-family: 'Bookman Old Style'; margin-bottom: 60px;}
+.makeup .makeup_back {position: absolute; top: 288px; left: -360px;}
+
+.makeup .makeup_wrapper .best_wrapper{position: absolute; top: 228px; right: 0; width: 550px; height: 600px; overflow: hidden;
+    box-shadow: 0px 0px 20px 20px rgba(25, 25, 25, 0.7);}
+.makeup .makeup_wrapper .best_wrapper a img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease-in-out;}
+.makeup .makeup_wrapper .best_wrapper:hover a img { transform: scale(1.1);}
+
+.makeup .makeup_wrapper .new_wrapper{position: absolute; top: 888px; right: 0; width: 650px; height: 400px; overflow: hidden;
+    box-shadow: 0px 0px 20px 20px rgba(25, 25, 25, 0.7);}
+.makeup .makeup_wrapper .new_wrapper a img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease-in-out;}
+.makeup .makeup_wrapper .new_wrapper:hover a img { transform: scale(1.1);}
+.makeup .makeup_wrapper p {font-size:30px; position: absolute; top: 20px; left: 20px;}
+
+
+/******* perfume *******/
+.perfume {width: 1200px; height: 950px; margin: 0 auto; padding-top: 120px; text-align: center;}
+.perfume h2 {font-size: 48px; font-family: 'Bookman Old Style'; margin-bottom: 60px;}
+
+.perfume .perfume_wrapper {display: flex; justify-content: space-between; align-items: center; width: 100%;}
+.perfume .perfume_wrapper .perfume_list{position: relative; display: flex; flex-direction: column; align-items: center;}
+.perfume .perfume_wrapper .perfume_list .item_back { opacity: 0.4; transition: opacity 0.3s ease-in-out; }
+.perfume .perfume_wrapper .perfume_list .perfume_item { max-width:100%; height: auto; transition: opacity 0.3s ease-in-out; }
+.perfume .perfume_wrapper .perfume_list:hover .item_back,
+.perfume .perfume_wrapper .perfume_list:hover .perfume_item { opacity: 1;}
+
+.perfume .perfume_wrapper .item_inner {position: absolute; top: 35%; left: 50%; width: 100%; height: auto; 
+    transform: translateX(-50%); text-align: center;}
+.perfume .perfume_wrapper .item_inner p {font-size: 30px; margin-top: 10px;}
+
+
+/******* personal *******/
+.personal h2 {font-size: 48px; font-family: 'Bookman Old Style'; margin-bottom: 60px;}
+
+.personal .season_wrapper {width: 1200px; margin:0 auto; margin-bottom: 60px;  display: flex; justify-content: space-evenly;}
+.personal .season_wrapper .season_list {font-size: 24px; color: #666;}
+.personal .season_wrapper .season_list.active {color: #fff;}
+.season {display: none !important;}
+.season.active {display: block !important;}
+
+.section.personal {max-width: 1660px;}
+.personal {width: 100%; height: 950px; margin: 0 auto; text-align: center; padding-top: 120px;}
+.personal .swiper-container { width: 100%; display: inline-block; box-sizing: border-box; vertical-align: top; 
+    margin: 0 auto; position: relative; z-index: 1;}
+.personal .swiper-wrapper { position: relative; width: 100%; height: 100%; z-index: 1; 
+    display: flex; flex-wrap: nowrap; box-sizing: content-box; }
+.personal .item { transform: translate3d(0px,0px,0px); margin: 0; min-width: 380px;}
+.item .item_wrapper >.item_list { width: 340px; display: inline-block; margin: 0;}
+
+.personal .swiper-container .item_wrapper .item_list .item_box {width: 340px; height: 500px; overflow: hidden;}
+.personal .swiper-container .item_wrapper .item_list .item_box a img {display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease-in-out;}
+.personal .swiper-container .item_wrapper .item_list .item_box:hover a img {transform: scale(1.08);}
+.personal .swiper-container .item_wrapper .item_list .descript {text-align: left; font-size: 24px; margin-top: 20px;}
+.personal .swiper-container .item_wrapper .item_list .descript .detail {font-size: 18px; margin-top: 10px; color: #bbb;}
+
+
+
+
+.personal .more_item {position: relative; width: 340px; height: 500px;}
+.personal .more_item a {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+.personal .more_item .more_btn {width: 200px; height: 200px; position: relative; display: flex; align-items: center; justify-content: center;}
+.personal .more_item .more_arrow {width: 100px; height: 100px; border-radius: 50%; transition: all 0.3s linear;
+    position: relative; z-index: 2; display: flex; align-items: center; justify-content: center;}
+
+.personal .more_item .more_arrow::before { content: ''; display: block; width: 100%; height: 100%; border-radius: 50%; background: #000; opacity: 0;
+transition: all 0.3s linear; position: absolute; left: 0; top: 0; transform: scale(0);}
+
+.personal .more_item .more_arrow svg { width: 50px; height: 30px; transition: all 0.3s linear; fill: #828282; position: relative;}
+.personal .more_item .more_text {position: absolute; left: 0; top: 0; width: 100%; height: 100%; transition: all 0.3s linear; z-index: 2; animation: moreRotate 6s linear infinite; fill: #c09686;}
+.personal .more_btn:hover .more_arrow svg {fill: #fff;}
+.personal .more_btn:hover .more_text {fill: #fff;}
+
+@keyframes moreRotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+/******* footer *******/
+#footer {background: #000; color: #666; padding-top: 120px; font-size: 18px;}
+#footer .line {width: 100%; height: 1px; background: #666;}
+#footer .inner {width:1200px; padding-top: 120px; padding-bottom: 120px; margin: 0 auto;}
+#footer .inner .footer_wrapper {display: flex; justify-content: space-between;}
+#footer .inner .footer_wrapper .footer_menu {font-size: 24px; color: #fff; }
+#footer .inner .footer_wrapper li {margin-top: 25px;}
+
+#footer .inner .footer_wrapper .select_language {display: flex; flex-direction: column; gap: 25px;}
+#footer .inner .footer_wrapper select{position: relative; width: 200px; height: 30px; background: #333; color: #999; border: none; padding: 5px;}
+
+#footer .inner .info {font-size:16px; color: #333; text-align: center; margin-top: 100px;}
+#footer .inner .info > p {margin-bottom: 25px;}
