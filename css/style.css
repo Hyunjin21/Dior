@@ -2,7 +2,7 @@
 
 html,
 body {position: relative; height: 100%;}
-body {margin: 0; padding: 0; width: 100vw;}
+body {margin: 0; padding: 0; width: 100vw; overflow-x: hidden;}
 
 
 .header_wrapper {
@@ -22,10 +22,7 @@ body {margin: 0; padding: 0; width: 100vw;}
 }
 
 
-
-
-
-.header_wrapper {height: 130px; background: #fff;}
+.header_wrapper {height: 130px; width: 100vw; background: #fff;}
 .header_wrapper h1 {height: 75px; display: flex; align-items: center; justify-content: center; border-bottom: 1px #dcdcdc solid;}
 .header_wrapper h1 img {height: 35px;}
 .header_wrapper .gnb {height: 55px; width: 1200px; margin: 0 auto;}
