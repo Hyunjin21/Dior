@@ -16,13 +16,12 @@
         <header id="header">
             <div class="header_wrapper">
                 <h1><a href="javascript:void(0)" class="logo">
-                    <!-- <img src="img/logo.png" alt="디올로고"/> -->
                     <img src="img/diorLogo.svg" alt="디올로고">
                 </a></h1>
-                <div class="gnb">
+                <div class="gnb pc">
                     <div class="gnb_wrapper">
                         <ul>
-                            <li><a href="/#section02">Makeup</a></li>
+                            <li><a href="/#section01">Makeup</a></li>
                             <li><a href="/#section03">Perfume</a></li>
                             <li><a href="/#section03">Body</a></li>
                             <li><a href="/#section04">Personal Service</a></li>
@@ -35,20 +34,35 @@
                         </ul>
                     </div>
                 </div>
+                <div class="gnb mb">
+                    <div class="gnb_menu">
+                        <ul>
+                            <li><a href="#"><img src="img/search.png" alt="검색"></a></li>
+                            <li><a href="#" class="menu_on"><img src="img/menu.png" alt="메뉴"></a></li>
+                        </ul>
+                    </div>
+                    <div class="gnb_wrapper">
+                        <a href="javascript:void(0)" class="close"><img src="img/close_mb.png" alt="닫기"/></a>
+                        <ul>
+                            <li><a href="/#section02">Makeup</a></li>
+                            <li><a href="/#section03">Perfume</a></li>
+                            <li><a href="/#section03">Body</a></li>
+                            <li><a href="/#section04">Personal Service</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </header>
+        <div class="mb-backdrop" aria-hidden="true"></div>
         <div class="container">
             <div class="contents">
                 <div class="cursor"></div>
                 <div class="main">
-                    <div class="banner">
+                    <div class="banner pc">
                         <div class="banner_wrapper">
-                            <div class="banner_inner">
-                              <a href="javascript:void(0)">
-                                <!-- <img id="bannerImage" src="img/banner1.png" alt="배너1"> -->
+                            <a href="javascript:void(0)">
                                 <canvas id="imageCanvas"></canvas>
-                              </a>
-                            </div>
+                            </a>
                         </div>
                         <div class="more_banner clickable">
                             <a class="more_btn" href="javascript:void(0)">
@@ -111,7 +125,14 @@
                             </a>
                         </div>
                     </div>
-                    <div class="section video" id="section01">
+                    <div class="banner mb">
+                        <div class="banner_wrapper">
+                            <a href="javascript:void(0)">
+                                <img id="bannerImage" src="img/banner_mb.png" alt="배너1">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="section video">
                         <h2>Makeup Collection</h2>
                         <div class="video_container">
                             <div class="video_wrapper">
@@ -121,20 +142,38 @@
                             </div>
                         </div>
                     </div>
-                    <div class="section makeup" id="section02">
+                    <div class="section makeup pc" id="section01">
                         <h2>Makeup</h2>
-                        <img class="makeup_back" src="img/makeup_back.png" alt="배경이미지">
+                        <img class="makeup_back" src="img/makeup_back_pc.png" alt="배경이미지">
                         <div class="makeup_wrapper">
                             <div class="best_wrapper">
                                 <a href="javascript:void(0)">
-                                    <img src="img/best_seller.png" alt="베스트셀러">
+                                    <img src="img/best_seller_pc.png" alt="베스트셀러">
                                     <p>Best Seller</p>
                                 </a>
                             </div>
                             <div class="new_wrapper">
                                 <a href="javascript:void(0)">
-                                    <img src="img/new_product.png" alt="신제품">
+                                    <img src="img/new_product_pc.png" alt="신제품">
                                     <p>New Product</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section makeup mb" id="section02">
+                        <h2>Makeup</h2>
+                        <img class="makeup_back" src="img/makeup_back_mb.png" alt="배경이미지">
+                        <div class="makeup_wrapper">
+                            <div class="best_wrapper">
+                                <p>Best Seller</p>
+                                <a href="javascript:void(0)">
+                                    <img src="img/best_seller_mb.png" alt="베스트셀러">
+                                </a>
+                            </div>
+                            <div class="new_wrapper">
+                                <p>New Product</p>
+                                <a href="javascript:void(0)">
+                                    <img src="img/new_product_mb.png" alt="신제품">
                                 </a>
                             </div>
                         </div>
@@ -175,16 +214,16 @@
                         <h2>Personalization</h2>
                         <ul class="season_wrapper">
                             <li class="season_list active">
-                                <a href= "javascript:void(0)">Spring tone</a>
+                                <a href= "javascript:void(0)">Spring</a>
                             </li>
                             <li class="season_list">
-                                <a href="javascript:void(0)">Summer tone</a>
+                                <a href="javascript:void(0)">Summer</a>
                             </li>
                             <li class="season_list">
-                                <a href="javascript:void(0)">Autumn tone</a>                            
+                                <a href="javascript:void(0)">Autumn</a>                            
                             </li>
                             <li class="season_list">
-                                <a href="javascript:void(0)">Winter tone</a>
+                                <a href="javascript:void(0)">Winter</a>
                             </li>
                         </ul>
                         <ul class="season_inner">
@@ -792,9 +831,10 @@
         <footer id="footer">
             <div class="line"></div>
             <div class="inner">
-                <ul class="footer_wrapper">
-                    <li><a class="footer_menu" href="javascript:void(0)">Explore More</a>
-                        <ul>
+                <ul class="footer_wrapper pc">
+                    <li class="footer_menu">
+                        <a href="javascript:void(0)">Explore More</a>
+                        <ul class="footer_detail">
                             <li><a href="javascript:void(0)">Skincare</a></li>
                             <li><a href="javascript:void(0)">La Collection Privée Christian Dior</a></li>
                             <li><a href="javascript:void(0)">Best Seller</a></li>
@@ -802,8 +842,9 @@
                             <li><a href="javascript:void(0)">Gift sets</a></li>
                         </ul>
                     </li>
-                    <li><a class="footer_menu" href="javascript:void(0)">Online Service</a>
-                        <ul>
+                    <li class="footer_menu">
+                        <a href="javascript:void(0)">Online Service</a>
+                        <ul class="footer_detail">
                             <li><a href="javascript:void(0)">Contact</a></li>
                             <li><a href="javascript:void(0)">Customer Inquiry</a></li>
                             <li><a href="javascript:void(0)">Delivery & Returns</a></li>
@@ -811,8 +852,9 @@
                             <li><a href="javascript:void(0)">My Page</a></li>
                             <li><a href="javascript:void(0)">SNS</a></li>
                         </ul></li>
-                    <li><a class="footer_menu" href="javascript:void(0)">Find a Boutique</a>
-                        <ul>
+                    <li class="footer_menu">
+                        <a href="javascript:void(0)">Find a Boutique</a>
+                        <ul class="footer_detail">
                             <li><a href="javascript:void(0)">Christian Dior Couture Boutiques</a></li>
                             <li><a href="javascript:void(0)">Parfums Christian Dior Boutiques</a></li>
                             <li class="select_language"><a class="footer_menu" href="javascript:void(0)">Language</a>
@@ -823,14 +865,58 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a class="footer_menu" href="javascript:void(0)">The House of Dior</a>
-                        <ul>
+                    <li class="footer_menu">
+                        <a href="javascript:void(0)">The House of Dior</a>
+                        <ul class="footer_detail">
                             <li><a href="javascript:void(0)">Terms and Conditions</a></li>
                             <li><a href="javascript:void(0)">Careers</a></li>
                         </ul>
                     </li>
                 </ul>
-                <div class="info">
+                <ul class="footer_wrapper mb">
+                    <li class="footer_menu">
+                        <a href="javascript:void(0)">Explore More</a>
+                        <ul class="footer_detail">
+                            <li><a href="javascript:void(0)">Skincare</a></li>
+                            <li><a href="javascript:void(0)">La Collection Privée Christian Dior</a></li>
+                            <li><a href="javascript:void(0)">Best Seller</a></li>
+                            <li><a href="javascript:void(0)">New Product</a></li>
+                            <li><a href="javascript:void(0)">Gift sets</a></li>
+                        </ul>
+                    </li>
+                    <li class="footer_menu">
+                        <a href="javascript:void(0)">Online Service</a>
+                        <ul class="footer_detail">
+                            <li><a href="javascript:void(0)">Contact</a></li>
+                            <li><a href="javascript:void(0)">Customer Inquiry</a></li>
+                            <li><a href="javascript:void(0)">Delivery & Returns</a></li>
+                            <li><a href="javascript:void(0)">FAQ</a></li>
+                            <li><a href="javascript:void(0)">My Page</a></li>
+                            <li><a href="javascript:void(0)">SNS</a></li>
+                        </ul></li>
+                    <li class="footer_menu">
+                        <a href="javascript:void(0)">Find a Boutique</a>
+                        <ul class="footer_detail">
+                            <li><a href="javascript:void(0)">Christian Dior Couture Boutiques</a></li>
+                            <li><a href="javascript:void(0)">Parfums Christian Dior Boutiques</a></li>
+                        </ul>
+                    </li>
+                    <li class="footer_menu">
+                        <a href="javascript:void(0)">The House of Dior</a>
+                        <ul class="footer_detail">
+                            <li><a href="javascript:void(0)">Terms and Conditions</a></li>
+                            <li><a href="javascript:void(0)">Careers</a></li>
+                        </ul>
+                    </li>
+                    <li class="footer_menu">
+                        <a href="javascript:void(0)">Language</a>
+                        <ul class="footer_detail">
+                            <li><a href="javascript:void(0)">English</a></li>
+                            <li><a href="javascript:void(0)">Korean</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="info pc">
                     <p>
                         LVMH Cosmetics Co., Ltd. | 03155 11th floor, 17 Jongno 3-gil, Jongno-gu, Seoul (Cheongjin-dong, Gwanghwamun D Tower) | <br/>
                         Business registration number: 214-81-64219 Representative: Ariangel Inzensburger, BERNARD BOUISSIERES NICOLAS FERNAND JA | <br/>
@@ -845,10 +931,26 @@
                         Ltd. does not take any responsibility for information and transactions.
                     </p>
                 </div>
+                <div class="info mb">
+                    <p>
+                        LVMH Cosmetics Co., Ltd. | 03155 11th floor, 17 Jongno 3-gil, Jongno-gu, Seoul (Cheongjin-dong, Gwanghwamun D Tower) <br/>
+                         | Business registration number: 214-81-64219 <br/>
+                        Representative: Ariangel Inzensburger, BERNARD BOUISSIERES NICOLAS FERNAND JA <br/>
+                        | Mail order business report number: 2018-Seoul Jongro-1505 | Verification of business information <br/>
+                        Personal information manager: Lucien FOISY | Customer Center: 080-342-9500 contact@dior.co.kr | Hosting service: Shopify
+                    </p>
+                    <p>
+                        LVMH Cosmetics Co., Ltd., as a mail order intermediary, is not a transaction party for the fashion and accessory <br/>
+                        products sold by Christian Dior Couture Korea Co., Ltd. on sites linked to this website, and is not a transaction <br/>
+                        party for products and transactions registered by Christian Dior Couture Korea Co., Ltd. LVMH Cosmetics Co., <br/>
+                        Ltd. does not take any responsibility for information and transactions.
+                    </p>
+                </div>
             </div>
         </footer>
     </div>
-
+    
+    <script src="js/jquery-3.3.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>
